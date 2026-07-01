@@ -5,8 +5,8 @@ import { motion, Variants } from 'framer-motion';
 const contacts = [
   {
     label: 'GitHub',
-    value: '@sempakmumbul',
-    href: 'https://github.com/sempakmumbul',
+    value: '@avid-maulana',
+    href: 'https://github.com/avid-maulana',
     cta: 'Visit Profile',
   },
   {
