@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 const highlights = [
-  { value: '7th', label: 'Semester' },
+  { value: '7th', label: 'Semester at State University of Malang' },
   { value: '2+', label: 'Organizational Experience' },
   { value: '10+', label: 'Awards' },
 ];
@@ -96,9 +96,11 @@ export default function Hero() {
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-[1.05rem]">
-                Mahasiswa Pendidikan Teknik Informatika yang berfokus pada UI/UX
-                Design, Front-End Development, dan pengembangan pengalaman digital
-                yang lebih bermakna.
+                Saya merupakan mahasiswa aktif Program Studi S1 Pendidikan Teknik Informatika di Universitas Negeri
+Malang  yang  memiliki  minat  besar  pada  bidang  teknologi  dan  desain  digital.  Saya  tertarik  pada
+pengembangan UI/UX Design serta desain grafis untuk menciptakan tampilan yang menarik, modern, dan
+mudah digunakan. Selain itu, saya juga menyukai aktivitas vibe coding sebagai bentuk eksplorasi kreatif
+dalam mengembangkan ide dan tampilan digital.
               </p>
             </motion.div>
 
