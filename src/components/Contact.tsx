@@ -1,25 +1,59 @@
 'use client';
 
+import type { ComponentType } from 'react';
 import { motion, Variants } from 'framer-motion';
 
-const contacts = [
+type IconProps = {
+  className?: string;
+};
+
+const GitHubIcon = ({ className = 'h-5 w-5' }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.467-2.382 1.235-3.222-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.49 11.49 0 0112 5.8c1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.654 1.652.243 2.873.12 3.176.77.84 1.233 1.912 1.233 3.222 0 4.61-2.807 5.624-5.48 5.922.43.372.814 1.103.814 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12Z" />
+  </svg>
+);
+
+const LinkedInIcon = ({ className = 'h-5 w-5' }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M20.447 20.452H16.89v-5.57c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.667H9.345V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.269 2.372 4.269 5.456v6.285ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.556V9H7.12v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729V22.27C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+  </svg>
+);
+
+const InstagramIcon = ({ className = 'h-5 w-5' }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm-.125 2A3.625 3.625 0 0 0 4 7.625v8.75A3.625 3.625 0 0 0 7.625 20h8.75A3.625 3.625 0 0 0 20 16.375v-8.75A3.625 3.625 0 0 0 16.375 4h-8.75ZM17 6.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+  </svg>
+);
+
+type ContactItem = {
+  label: string;
+  value: string;
+  href: string;
+  cta: string;
+  icon: ComponentType<IconProps>;
+};
+
+const contacts: ContactItem[] = [
   {
     label: 'GitHub',
     value: '@avid-maulana',
     href: 'https://github.com/avid-maulana',
     cta: 'Visit Profile',
+    icon: GitHubIcon,
   },
   {
     label: 'LinkedIn',
     value: 'Muhammad Avid Maulana',
     href: 'https://www.linkedin.com/in/muhammad-avid-maulana-b63228216/',
     cta: 'Connect',
+    icon: LinkedInIcon,
   },
   {
     label: 'Instagram',
     value: '@avdmaulanaa',
     href: 'https://instagram.com/avdmaulanaa',
     cta: 'Follow',
+    icon: InstagramIcon,
   },
 ];
 
@@ -159,6 +193,104 @@ const primaryArrow: Variants = {
   },
 };
 
+const socialCard: Variants = {
+  rest: {
+    y: 0,
+    scale: 1,
+  },
+  hover: {
+    y: -5,
+    scale: 1.01,
+    transition: {
+      duration: 0.28,
+      ease: [0.16, 1, 0.3, 1],
+      staggerChildren: 0.03,
+    },
+  },
+};
+
+const socialOverlay: Variants = {
+  rest: { opacity: 0 },
+  hover: {
+    opacity: 1,
+    transition: {
+      duration: 0.26,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const socialIconWrap: Variants = {
+  rest: {
+    backgroundColor: 'rgba(248,250,252,1)',
+    borderColor: 'rgba(226,232,240,1)',
+    color: 'rgba(51,65,85,1)',
+    y: 0,
+  },
+  hover: {
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    borderColor: 'rgba(255,255,255,0.12)',
+    color: 'rgba(255,255,255,1)',
+    y: -1,
+    transition: {
+      duration: 0.26,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const socialLabel: Variants = {
+  rest: { color: 'rgba(100,116,139,1)' },
+  hover: {
+    color: 'rgba(255,255,255,0.65)',
+    transition: {
+      duration: 0.24,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const socialValue: Variants = {
+  rest: { color: 'rgba(15,23,42,1)', y: 0 },
+  hover: {
+    color: 'rgba(255,255,255,1)',
+    y: -1,
+    transition: {
+      duration: 0.26,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const socialCta: Variants = {
+  rest: { color: 'rgba(37,99,235,1)', y: 0 },
+  hover: {
+    color: 'rgba(147,197,253,1)',
+    y: -1,
+    transition: {
+      duration: 0.26,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const socialArrow: Variants = {
+  rest: {
+    color: 'rgba(148,163,184,1)',
+    x: 0,
+    y: 0,
+  },
+  hover: {
+    color: 'rgba(255,255,255,0.7)',
+    x: 4,
+    y: -4,
+    transition: {
+      duration: 0.26,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 export default function Contact() {
   return (
     <motion.section
@@ -169,7 +301,7 @@ export default function Contact() {
       whileInView="show"
       viewport={{ once: true, amount: 0.15 }}
     >
-      <div className="mx-auto max-w-6xl px-0">
+      <div className="mx-auto max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-[1.04fr_0.96fr] lg:gap-10">
           <motion.div
             variants={panelReveal}
@@ -279,55 +411,73 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          <motion.div
-            variants={listWrap}
-            className="flex flex-col gap-4 sm:gap-5"
-          >
-            {contacts.map((item) => (
-              <motion.a
-                key={item.label}
-                variants={cardItem}
-                whileHover={{ y: -5, scale: 1.01 }}
-                whileTap={{ scale: 0.985 }}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  group relative overflow-hidden
-                  rounded-[28px] border border-slate-200 bg-white
-                  p-5 sm:p-6
-                "
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-slate-950" />
+          <motion.div variants={listWrap} className="flex flex-col gap-4 sm:gap-5">
+            {contacts.map((item) => {
+              const Icon = item.icon;
 
-                <div className="relative z-10 flex min-h-[140px] flex-col justify-between">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm text-slate-500 transition-colors duration-300 group-hover:text-white/65">
-                        {item.label}
-                      </p>
+              return (
+                <motion.a
+                  key={item.label}
+                  variants={cardItem}
+                  initial="rest"
+                  whileHover="hover"
+                  whileTap={{ scale: 0.985, y: -1 }}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    group relative overflow-hidden rounded-[28px]
+                    border border-slate-200 bg-white p-5
+                    sm:p-6 [WebkitTapHighlightColor:transparent]
+                  "
+                >
+                  <motion.div
+                    variants={socialOverlay}
+                    className="pointer-events-none absolute inset-0 bg-slate-950"
+                  />
 
-                      <h3 className="mt-2 text-xl font-bold tracking-tight text-slate-950 transition-colors duration-300 group-hover:text-white">
-                        {item.value}
-                      </h3>
+                  <motion.div
+                    variants={socialCard}
+                    className="relative z-10 flex min-h-[140px] flex-col justify-between"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-4">
+                        <motion.div
+                          variants={socialIconWrap}
+                          className="
+                            flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl
+                            border
+                          "
+                        >
+                          <Icon className="h-5 w-5" />
+                        </motion.div>
+
+                        <div>
+                          <motion.p variants={socialLabel} className="text-sm">
+                            {item.label}
+                          </motion.p>
+
+                          <motion.h3
+                            variants={socialValue}
+                            className="mt-2 text-xl font-bold tracking-tight"
+                          >
+                            {item.value}
+                          </motion.h3>
+                        </div>
+                      </div>
+
+                      <motion.span variants={socialArrow} className="text-lg">
+                        ↗
+                      </motion.span>
                     </div>
 
-                    <span
-                      className="
-                        text-lg text-slate-400 transition-all duration-300
-                        group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white/70
-                      "
-                    >
-                      ↗
-                    </span>
-                  </div>
-
-                  <p className="mt-6 text-sm font-medium text-blue-600 transition-colors duration-300 group-hover:text-blue-300">
-                    {item.cta}
-                  </p>
-                </div>
-              </motion.a>
-            ))}
+                    <motion.p variants={socialCta} className="mt-6 text-sm font-medium">
+                      {item.cta}
+                    </motion.p>
+                  </motion.div>
+                </motion.a>
+              );
+            })}
           </motion.div>
         </div>
       </div>
