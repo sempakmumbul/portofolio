@@ -218,7 +218,7 @@ export default function Navbar() {
                 <motion.a
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.985 }}
-                  href="https://github.com/avid-maulana/portofolio/blob/main/public/resume.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -465,7 +465,7 @@ export default function Navbar() {
                   <motion.a
                     whileHover={{ y: -1, scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
-                    href="https://github.com/avid-maulana/portofolio/blob/main/public/resume.pdf"
+                    href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="

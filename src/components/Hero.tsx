@@ -119,7 +119,7 @@ export default function Hero() {
               </Link>
 
               <a
-                href="https://github.com/avid-maulana/portofolio/blob/main/public/resume.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
