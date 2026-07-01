@@ -17,6 +17,8 @@ const skillCategories = [
       'Design System',
       'User Research',
     ],
+    description:
+      'Cukup kuat dalam menyusun wireframe, alur pengguna, dan prototype antarmuka yang rapi, modern, dan mudah digunakan.',
   },
   {
     title: 'Front-End Development',
@@ -32,20 +34,26 @@ const skillCategories = [
       'Next.js',
       'Tailwind CSS',
     ],
+    description:
+      'Memahami pengembangan antarmuka web modern dengan fokus pada layout responsif, komponen reusable, dan pengalaman visual yang bersih.',
   },
   {
     title: 'Mobile Development',
     score: '6/10',
     backColor: 'bg-emerald-600',
     textColor: 'text-white',
-    skills: ['Flutter', 'Dart', 'Responsive Design', 'Firebase', 'Supabase'],
+    skills: ['Flutter', 'Dart', 'Responsive Design', 'Supabase'],
+    description:
+      'Mampu membangun tampilan aplikasi mobile dasar hingga menengah dengan pendekatan responsif dan integrasi layanan backend modern.',
   },
   {
     title: 'Backend & Database',
     score: '6/10',
     backColor: 'bg-amber-500',
-    textColor: 'text-slate-950',
-    skills: ['PHP', 'Laravel', 'MySQL', 'MariaDB', 'REST API'],
+    textColor: 'text-white',
+    skills: ['PHP', 'Laravel', 'MySQL', 'MariaDB'],
+    description:
+      'Memiliki pemahaman dasar yang cukup baik untuk pengelolaan data, logika aplikasi, dan pembuatan API pada kebutuhan proyek menengah.',
   },
   {
     title: 'Design & Productivity',
@@ -53,6 +61,8 @@ const skillCategories = [
     backColor: 'bg-rose-500',
     textColor: 'text-white',
     skills: ['Canva', 'Adobe Illustrator', 'Microsoft Office', 'Google Workspace'],
+    description:
+      'Sangat nyaman menggunakan tools desain dan produktivitas untuk kebutuhan visual, presentasi, dokumentasi, dan pekerjaan kolaboratif harian.',
   },
   {
     title: 'Soft Skills',
@@ -66,6 +76,8 @@ const skillCategories = [
       'Problem Solving',
       'Project Management',
     ],
+    description:
+      'Memiliki kemampuan komunikasi, kolaborasi tim, dan kepemimpinan yang cukup baik untuk mendukung pengerjaan proyek serta organisasi.',
   },
 ];
 
@@ -241,7 +253,7 @@ export default function Skills() {
                             0{index + 1}/0{skillCategories.length}
                           </p>
 
-                          <h3 className="mt-3 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
+                          <h3 className="mt-2 text-xl font-black tracking-tight text-slate-950 sm:text-2xl">
                             {category.title}
                           </h3>
                         </div>
@@ -272,34 +284,55 @@ export default function Skills() {
                     </div>
 
                     {/* Back */}
-                    <div
-                      className={`
-                        absolute inset-0 rounded-[28px] p-5
-                        shadow-[0_18px_36px_rgba(15,23,42,0.10)]
-                        sm:p-6 lg:p-7
-                        ${category.backColor} ${category.textColor}
-                      `}
-                      style={{
-                        backfaceVisibility: 'hidden',
-                        transform: 'rotateY(180deg)',
-                      }}
-                    >
-                      <div className="flex h-full flex-col justify-between">
-                        <p className="text-[12px] font-semibold uppercase tracking-[0.16em] opacity-80">
-                          Skill Score
-                        </p>
+<div
+  className={`
+    absolute inset-0 rounded-[28px] p-5
+    shadow-[0_18px_36px_rgba(15,23,42,0.10)]
+    sm:p-6 lg:p-7
+    ${category.backColor} ${category.textColor}
+  `}
+  style={{
+    backfaceVisibility: 'hidden',
+    transform: 'rotateY(180deg)',
+  }}
+>
+  <div className="flex h-full flex-col">
+    <div className="flex items-start justify-between gap-4">
+      <div>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] opacity-75">
+          Overview
+        </p>
+        <h3 className="mt-2 text-lg font-black tracking-tight sm:text-xl">
+          {category.title}
+        </h3>
+      </div>
 
-                        <div className="flex flex-1 items-center justify-center">
-                          <p className="text-5xl font-black tracking-tight sm:text-6xl">
-                            {category.score}
-                          </p>
-                        </div>
+      <span
+        className="
+          shrink-0 rounded-full border border-white/20
+          bg-white/12 px-3 py-1
+          text-[11px] font-semibold uppercase tracking-[0.14em]
+        "
+      >
+        {category.score}
+      </span>
+    </div>
 
-                        <p className="text-center text-sm font-medium opacity-80">
-                          Estimated proficiency
-                        </p>
-                      </div>
-                    </div>
+    <div className="mt-3 h-px w-full bg-white/15" />
+
+    <div className="mt-3 flex-1">
+      <p className="max-w-[30ch] text-sm leading-7 opacity-95 sm:text-[15px]">
+        {category.description}
+      </p>
+    </div>
+
+    <div className="pt-3">
+      <p className="text-xs font-medium opacity-70">
+        Current working level
+      </p>
+    </div>
+  </div>
+</div>
                   </motion.div>
                 </motion.div>
               </button>

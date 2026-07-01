@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -79,6 +80,7 @@ export default function HomePage() {
       />
 
       <div className="relative z-10">
+        <Navbar />
         <Hero />
 
         <section className="w-full">

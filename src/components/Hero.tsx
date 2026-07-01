@@ -5,7 +5,7 @@ import { motion, Variants } from 'framer-motion';
 
 const highlights = [
   { value: '7th', label: 'Semester' },
-  { value: '2+', label: 'Org Experience' },
+  { value: '2+', label: 'Organizational Experience' },
   { value: '10+', label: 'Awards' },
 ];
 
