@@ -30,14 +30,14 @@ const experiences = [
     title: 'Ketua Bidang Organisasi & Kepemimpinan',
     organization: 'HMD Teknik Elektro dan Informatika',
     description:
-      'Bertanggung jawab terhadap pengembangan organisasi, kaderisasi, dan pembinaan kepemimpinan mahasiswa.',
+      'Memimpin Bidang Organisasi dan Kepemimpinan dalam merancang serta mengembangkan berbagai program kerja yang bertujuan meningkatkan kemampuan kepemimpinan anggota. Mengoordinasikan pelaksanaan kegiatan internal untuk memperkuat solidaritas, komunikasi, dan efektivitas organisasi, sekaligus menyusun strategi serta inisiatif yang mendukung pengembangan sistem organisasi dan potensi sumber daya manusia di lingkungan himpunan.',
   },
   {
     year: '2023 - 2024',
     title: 'Staff Divisi Komunikasi & Informasi',
     organization: 'HMD Teknik Elektro dan Informatika',
     description:
-      'Mengelola media informasi organisasi dan mendukung publikasi berbagai kegiatan kemahasiswaan.',
+      'Berperan sebagai Staff Divisi Kominfo dengan tanggung jawab mendukung penyebaran informasi organisasi melalui berbagai platform digital. Bertanggung jawab dalam mengelola media sosial, memastikan informasi yang disampaikan kepada mahasiswa akurat dan tepat waktu, serta berkontribusi dalam pembuatan dan pengelolaan konten kreatif untuk meningkatkan branding dan citra organisasi.',
   },
 ];
 
